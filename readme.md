@@ -31,11 +31,11 @@ Please note that this is still a work under progress and new ideas and contribut
 
 **Data Collection**
 
-The dataset containing images of people wearing helmets, vest  and people Number 9 safty vest were collected mostly from google search. Some images have people applauding, those were collected from Stanford 40 Action Dataset. Download images for training from [train_image_folder](https://drive.google.com/drive/folders/1b5ocFK8Z_plni0JL4gVhs3383V7Q9EYH?usp=sharing).
+The dataset containing images of people wearing helmets, vest  and people Number 9 safty vest were collected mostly from google search. Some images have been collected form kah=ggle . Download images for training from [train_image_folder](https://drive.google.com/drive/folders/1b5ocFK8Z_plni0JL4gVhs3383V7Q9EYH?usp=sharing).
 
 **Annotations**
 
-Annotaion of each image was done in Pascal VOC format using the awesome lightweight annotation tool [LabelImg](https://github.com/tzutalin/labelImg) for object-detection. Download annotations from [train_annot_folder](https://drive.google.com/drive/folders/1u_s_kxq0x_fqtqgJn9nKC92ikrThMDru?usp=sharing).
+Annotaion of each image was done in YOLO format using the awesome lightweight annotation tool [LabelImg](https://github.com/tzutalin/labelImg) for object-detection. Download annotations from [train_annot_folder](https://www.kaggle.com/andrewmvd/hard-hat-detection)  <br>.
 
 **Organize the dataset into 3 folders:**
 * train_image_folder <= the folder that contains the train images.
