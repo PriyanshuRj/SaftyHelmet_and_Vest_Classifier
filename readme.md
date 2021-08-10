@@ -1,7 +1,7 @@
 # PPE Detection using yolo3 and DeepSORT
 
 ## Introduction
-In Industry, specially manufacturing industry, Personal Protective Equipment (PPE) like helmet (hard-hat), safety-harness, goggles etc play a very important role in ensuring the safety of workers. However, many accidents still occur, due to the negligence of the workers as well as their supervisors. Supervisors can make mistakes due to the fact that such tasks are monotonous and they may not be able to monitor consistently. This project aims to utilize existing CCTV camera infrastructure to assist supervisors to monitor workers effectively by providing them with real time alerts.
+In Industry, specially manufacturing industry, Personal Protective Equipment (PPE) like helmet (hard-hat), safety-harness, safty-vest, goggles etc play a very important role in ensuring the safety of workers. However, many accidents still occur, due to the negligence of the workers as well as their supervisors. Supervisors can make mistakes due to the fact that such tasks are monotonous and they may not be able to monitor consistently. This project aims to utilize existing CCTV camera infrastructure to assist supervisors to monitor workers effectively by providing them with real time alerts.
 
 ## Functioning
 * Input is taken from CCTV cameras
@@ -79,51 +79,7 @@ Annotaion of each image was done in Pascal VOC format using the awesome lightwei
 
 There is a one-to-one correspondence by file name between images and annotations. If the validation set is empty, the training set will be automatically splitted into the training set and validation set using the ratio of 0.8.
 
-### 2. Edit the configuration file
 
-The configuration file is a json file, which looks like this:
-```
-{
-  "model" : {
-    "min_input_size":       288,
-    "max_input_size":       448,
-    "anchors":              [33,34, 52,218, 55,67, 92,306, 96,88, 118,158, 153,347, 209,182, 266,359],
-    "labels":               ["helmet","person with helmet","person without helmet"]
-  },
-
-  "train": {
-    "train_image_folder":   "train_image_folder/",
-    "train_annot_folder":   "train_annot_folder/",
-    "cache_name":           "helmet_train.pkl",
-
-    "train_times":          8,
-    "batch_size":           8,
-    "learning_rate":        1e-4,
-    "nb_epochs":            100,
-    "warmup_epochs":        3,
-    "ignore_thresh":        0.5,
-    "gpus":                 "0,1",
-
-    "grid_scales":          [1,1,1],
-    "obj_scale":            5,
-    "noobj_scale":          1,
-    "xywh_scale":           1,
-
-
-    "tensorboard_dir":      "logs",
-    "saved_weights_name":   "full_yolo3_helmet_and_person.h5",
-    "debug":                true
-  },
-
-  "valid": {
-    "valid_image_folder":   "",
-    "valid_annot_folder":   "",
-    "cache_name":           "",
-
-    "valid_times":          1
-  }
-}
-```
 The model section defines the type of the model to construct as well as other parameters of the model such as the input image size and the list of anchors. The `labels` setting lists the labels to be trained on. Only images, which has labels being listed, are fed to the network. The rest images are simply ignored. By this way, a Dog Detector can easily be trained using VOC or COCO dataset by setting `labels` to `['dog']`.
 
 Download pretrained weights for backend at:
@@ -131,31 +87,19 @@ Download pretrained weights for backend at:
 
 **These weights must be put in the root folder of the repository. They are the pretrained weights for the backend only and will be loaded during model creation. The code does not work without these weights.**
 
-### 3. Generate anchors for your dataset (optional)
 
-`python gen_anchors.py -c config.json`
 
-Copy the generated anchors printed on the terminal to the `anchors` setting in `config.json`.
+
 
 ### 4. Start the training process
 
-`python train.py -c config.json`
+`python train.py n`
 
 By the end of this process, the code will write the weights of the best model to file best_weights.h5 (or whatever name specified in the setting "saved_weights_name" in the config.json file). The training process stops when the loss on the validation set is not improved in 3 consecutive epoches.
  
  ### 5. Perform detection using trained weights on live feed from webcam
  
-  To run the code with gui :
-```bash
-python predict_gui.py -c config.json -n <number of cameras>
-```
-  Note that the gui supports only upto 2 cameras.
 
-  To run the code without gui :
-```bash
-python predict.py -c config.json -n <number of cameras>
-```
-  Here you can enter any number of cameras you want to use.
 
 ## Acknowledgements
 
