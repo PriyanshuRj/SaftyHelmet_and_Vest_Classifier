@@ -8,7 +8,7 @@ In Industry, specially manufacturing industry, Personal Protective Equipment (PP
 * YOLO is used for detecting persons with all the equipments
 * The result of the detection is showed through text as well as pictorial form.
 
-![img1](https://github.com/AnshulSood11/PPE-Detection-YOLO-Deep_SORT/blob/master/ppe-demo-images/img1.png)
+![img1](https://github.com/Priyanshu-rajput-01/results/10.jpg)
 It detects persons without helmet and displays the number of persons with helmet and
 those without helmet. It sends notification in the message box for each camera. There is global
 message box, where alerts from all cameras are displayed.
