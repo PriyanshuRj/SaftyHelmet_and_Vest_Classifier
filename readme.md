@@ -38,11 +38,11 @@ The dataset containing images of people wearing helmets and people without helme
 
 Annotaion of each image was done in Pascal VOC format using the awesome lightweight annotation tool [LabelImg](https://github.com/tzutalin/labelImg) for object-detection. Download annotations from [train_annot_folder](https://drive.google.com/drive/folders/1u_s_kxq0x_fqtqgJn9nKC92ikrThMDru?usp=sharing).
 
-**Organize the dataset into 4 folders:**
+**Organize the dataset into 3 folders:**
 * train_image_folder <= the folder that contains the train images.
 * train_annot_folder <= the folder that contains the train annotations in VOC format.
 * valid_image_folder <= the folder that contains the validation images.
-* valid_annot_folder <= the folder that contains the validation annotations in VOC format.
+* all therse folder should contain there anotated fills
 
 There is a one-to-one correspondence by file name between images and annotations. If the validation set is empty, the training set will be automatically splitted into the training set and validation set using the ratio of 0.8.
 
@@ -51,6 +51,7 @@ The model section defines the type of the model to construct as well as other pa
 
 Download pretrained weights for backend at:
 [helmet.pt](https://drive.google.com/file/d/189wETsNGWN8TwZpmQHFBFSzhag30LrjV/view?usp=sharing)<br>
+
 [vest_helmet.pt](https://drive.google.com/file/d/1VzkhAU5UPXun3pfx5yllo7TV20hHU8Th/view?usp=sharing)
 
 **These weights must be put in the root folder of the repository. They are the pretrained weights for the backend only and will be loaded during model creation. The code does not work without these weights.**
