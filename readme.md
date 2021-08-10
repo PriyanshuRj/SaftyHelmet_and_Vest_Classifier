@@ -9,13 +9,12 @@ In Industry, specially manufacturing industry, Personal Protective Equipment (PP
 * The result of the detection is showed through text as well as pictorial form.
 
 ![img1](results/10.jpg)<br>
-It detects persons without helmet and displays the number of persons with helmet and
-those without helmet. It sends notification in the message box for each camera. There is global
+It detects persons without helmet and displays the number of persons with helmet, vest and No. 9 safe vest
+. It sends notification in text format to the console for each camera. There is global
 message box, where alerts from all cameras are displayed.
 
 ![img2](results/5.jpg)<br>
-It detects that the same person about which it had warned earlier has now worn a
-helmet and notifies that also.
+It helps us to find the persons without safty equipments and warn them.
 
 ![img3](results/11.jpg)<br>
 
