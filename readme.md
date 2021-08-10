@@ -1,13 +1,12 @@
-# PPE Detection using yolo3 and DeepSORT
+# PPE Detection using yolo5
 
 ## Introduction
 In Industry, specially manufacturing industry, Personal Protective Equipment (PPE) like helmet (hard-hat), safety-harness, safty-vest, goggles etc play a very important role in ensuring the safety of workers. However, many accidents still occur, due to the negligence of the workers as well as their supervisors. Supervisors can make mistakes due to the fact that such tasks are monotonous and they may not be able to monitor consistently. This project aims to utilize existing CCTV camera infrastructure to assist supervisors to monitor workers effectively by providing them with real time alerts.
 
 ## Functioning
-* Input is taken from CCTV cameras
-* YOLO is used for detecting persons with proper PPE and those without PPE.
-* Deep_SORT allocates unique ids to detected persons and tracks them through consecutive frames of the video.
-* An alert is raised if a person is found to be without proper PPE for more than some set duration, say 5 seconds.
+* Input is taken from Live feed
+* YOLO is used for detecting persons with all the equipments
+* The result of the detection is showed through text as well as pictorial form.
 
 ![img1](https://github.com/AnshulSood11/PPE-Detection-YOLO-Deep_SORT/blob/master/ppe-demo-images/img1.png)
 It detects persons without helmet and displays the number of persons with helmet and
@@ -21,44 +20,12 @@ helmet and notifies that also.
 ![img3](https://github.com/AnshulSood11/PPE-Detection-YOLO-Deep_SORT/blob/master/ppe-demo-images/img3.png)
 
 Please note that this is still a work under progress and new ideas and contributions are welcome.
-* Currently, the model is trained to detect helmets (hard-hat) only. I have plans to train the model for other PPEs as well.
+* Currently, the model is trained to detect helmets (hard-hat) , safty-vest and No. 9 safty jacket (for navy officals). I have plans to train the model for other PPEs as well.
 * Currently, only usb cameras are supported. Support for other cameras needs to be added.
 * The tracker needs to be made robust.
 * Integrate service (via mobile app or SMS) to send real-time notifications to supervisors present on the field.
 
-## Quick Start
-Using conda environment is recommended. Follow these steps to get the code running:
 
-1. First, download the zip file.
-2. Download the following files into the project directory: 
-
-[mars-small128.pb](https://1drv.ms/u/s!ArJHK_Eldk0Cg3jyt-NR3xPErr_5?e=88vcgg)
-
-[full_yolo3_helmet_and_person.h5](https://1drv.ms/u/s!ArJHK_Eldk0Cg3cTEpkVoZyyxQzl?e=10MXuV)
-
-3. Run the following command to create a conda environmnet:
-```bash
- conda env create -f environment.yml
-```
-Alternatively,
-```bash
-conda create --name helmet-detection --file requirements.txt
-```
-4. Activate the conda environment:
-```bash
-conda activate helmet-detection
-```
-5. To run the code with gui :
-```bash
-python predict_gui.py -c config.json -n <number of cameras>
-```
-  Note that the gui supports only upto 2 cameras.
-
-  To run the code without gui :
-```bash
-python predict.py -c config.json -n <number of cameras>
-```
-  Here you can enter any number of cameras you want to use.
 ## Training the model
 
 ### 1. Data preparation
@@ -91,13 +58,13 @@ Download pretrained weights for backend at:
 
 
 
-### 4. Start the training process
+### 2. Start the training process
 
 `python train.py n`
 
 By the end of this process, the code will write the weights of the best model to file best_weights.h5 (or whatever name specified in the setting "saved_weights_name" in the config.json file). The training process stops when the loss on the validation set is not improved in 3 consecutive epoches.
  
- ### 5. Perform detection using trained weights on live feed from webcam
+ ### 3. Perform detection using trained weights on live feed from webcam
  
 
 
