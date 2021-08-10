@@ -31,7 +31,7 @@ Please note that this is still a work under progress and new ideas and contribut
 
 **Data Collection**
 
-The dataset containing images of people wearing helmets and people without helmets were collected mostly from google search. Some images have people applauding, those were collected from Stanford 40 Action Dataset. Download images for training from [train_image_folder](https://drive.google.com/drive/folders/1b5ocFK8Z_plni0JL4gVhs3383V7Q9EYH?usp=sharing).
+The dataset containing images of people wearing helmets, vest  and people Number 9 safty vest were collected mostly from google search. Some images have people applauding, those were collected from Stanford 40 Action Dataset. Download images for training from [train_image_folder](https://drive.google.com/drive/folders/1b5ocFK8Z_plni0JL4gVhs3383V7Q9EYH?usp=sharing).
 
 **Annotations**
 
