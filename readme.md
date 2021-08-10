@@ -70,6 +70,5 @@ By the end of this process, the code will write the weights of the best model to
 
 ## Acknowledgements
 
-* [rekon/keras-yolo2](https://github.com/rekon/keras-yolo2) for training data.
-* [experiencor/keras-yolo3](https://github.com/experiencor/keras-yolo3) for YOLO v3 implementation.
-* [nwojke/deep_sort](https://github.com/nwojke/deep_sort) for Deep_SORT implementation.
+* [ultralytics/yolov5](https://github.com/ultralytics/yolov5) for training data.
+
