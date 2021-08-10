@@ -50,7 +50,7 @@ There is a one-to-one correspondence by file name between images and annotations
 The model section defines the type of the model to construct as well as other parameters of the model such as the input image size and the list of anchors. The `labels` setting lists the labels to be trained on. Only images, which has labels being listed, are fed to the network. The rest images are simply ignored. By this way, a Dog Detector can easily be trained using VOC or COCO dataset by setting `labels` to `['dog']`.
 
 Download pretrained weights for backend at:
-[helmet.pt](https://drive.google.com/file/d/189wETsNGWN8TwZpmQHFBFSzhag30LrjV/view?usp=sharing)
+[helmet.pt](https://drive.google.com/file/d/189wETsNGWN8TwZpmQHFBFSzhag30LrjV/view?usp=sharing)<br>
 [vest_helmet.pt](https://drive.google.com/file/d/1VzkhAU5UPXun3pfx5yllo7TV20hHU8Th/view?usp=sharing)
 
 **These weights must be put in the root folder of the repository. They are the pretrained weights for the backend only and will be loaded during model creation. The code does not work without these weights.**
