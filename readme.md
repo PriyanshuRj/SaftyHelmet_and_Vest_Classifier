@@ -4,8 +4,9 @@
 **1. Introduction**
 **2. functioning**
 **3. Results**
-**4. Prossess of traing and testint the model**
+**4. Prossess of traing the model**
 **5. How to contribute**
+**6. Acknowledgements**
 ## Introduction
 In Industry, specially manufacturing industry, Personal Protective Equipment (PPE) like helmet (hard-hat), safety-harness, safty-vest, goggles etc play a very important role in ensuring the safety of workers. However, many accidents still occur, due to the negligence of the workers as well as their supervisors. Supervisors can make mistakes due to the fact that such tasks are monotonous and they may not be able to monitor consistently. This project aims to utilize existing CCTV camera infrastructure to assist supervisors to monitor workers effectively by providing them with real time alerts.
 
@@ -74,7 +75,14 @@ By the end of this process, the code will write the weights of the best model to
  ### 3. Perform detection using trained weights on live feed from webcam
  `detection_helmet.py`
  The trained weighets can be used in local inviorm=nment as well as on google colab.
-
+ 
+ 
+## How to contribute
+ - Step 1. Open a Issue related to the topic you want to contribute (For example - Styling, Code refactoring,updating readme,etc)
+ - Step 2. Wait for the confirmation
+ - Step 3. Fork the repository 
+ - Step 4. Create a brach and make the changes
+ - Step 5. Publish a PR with the new brach to the main brach of Upstream
 
 ## Acknowledgements
 
